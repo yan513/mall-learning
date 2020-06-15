@@ -1,5 +1,6 @@
 package com.yl.mall.po;
 
+import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;

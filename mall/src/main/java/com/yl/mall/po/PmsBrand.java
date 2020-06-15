@@ -1,62 +1,32 @@
 package com.yl.mall.po;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class PmsBrand {
-    /**
-     * id
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "id")
     private Long id;
 
-    /**
-     * 首字母
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "首字母")
     private String firstLetter;
 
-    /**
-     * 是否为品牌制造商:0->不是 1->是
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "是否为品牌制造商:0->不是 1->是")
     private Boolean factoryStatus;
 
-    /**
-     * 产品数量
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "产品数量")
     private Long productCount;
 
-    /**
-     * 产品评论数量
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "产品评论数量")
     private Long productCommentCount;
 
     private Integer showStatus;
 
-    /**
-     * 品牌logo
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "品牌logo")
     private String logo;
 
-    /**
-     * 专区大图
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "专区大图")
     private String bigPic;
 
-    /**
-     * 品牌故事
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "品牌故事")
     private String brandStory;
 
     public Long getId() {

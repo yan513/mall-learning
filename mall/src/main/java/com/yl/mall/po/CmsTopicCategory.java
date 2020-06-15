@@ -1,22 +1,16 @@
 package com.yl.mall.po;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class CmsTopicCategory {
     private Long id;
 
     private String name;
 
-    /**
-     * 分类图标
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "分类图标")
     private String icon;
 
-    /**
-     * 专题数量
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "专题数量")
     private Integer subjectCount;
 
     private Integer showStatus;

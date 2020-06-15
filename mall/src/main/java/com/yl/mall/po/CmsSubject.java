@@ -1,5 +1,7 @@
 package com.yl.mall.po;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Date;
 
 public class CmsSubject {
@@ -9,18 +11,10 @@ public class CmsSubject {
 
     private String title;
 
-    /**
-     * 专题主图
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "专题主图")
     private String pic;
 
-    /**
-     * 关联产品数量
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "关联产品数量")
     private Integer productCount;
 
     private Integer recommendStatus;
@@ -33,34 +27,18 @@ public class CmsSubject {
 
     private Integer commentCount;
 
-    /**
-     * 画册图片用逗号分割
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "画册图片用逗号分割")
     private String albumPics;
 
     private String description;
 
-    /**
-     * 显示状态：0->不显示；1->显示
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "显示状态：0->不显示；1->显示")
     private Integer showStatus;
 
-    /**
-     * 转发数
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "转发数")
     private Integer forwardCount;
 
-    /**
-     * 专题分类名称
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "专题分类名称")
     private String categoryName;
 
     private String content;

@@ -1,5 +1,7 @@
 package com.yl.mall.po;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class CmsPrefrenceArea {
     private Long id;
 
@@ -11,11 +13,7 @@ public class CmsPrefrenceArea {
 
     private Integer showStatus;
 
-    /**
-     * 展示图片
-     *
-     * @mbg.generated
-     */
+    @ApiModelProperty(value = "展示图片")
     private byte[] pic;
 
     public Long getId() {
