@@ -1,56 +1,61 @@
 package com.yl.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.yl.mall.dao.PmsBrandMapper;
-import com.yl.mall.po.PmsBrand;
-import com.yl.mall.po.PmsBrandExample;
+import com.yl.mall.dao.PmsBrandDao;
+import com.yl.mall.po.PmsBrandPO;
 import com.yl.mall.service.PmsBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @version: 1.00.00
  * @description:
- * @copyright: Copyright (c) 2019 立林科技 All Rights Reserved
- * @company: 厦门立林科技有限公司
- * @author: yanlin
+ * @copyright: Copyright (c) 2019  All Rights Reserved
+ * @company:
+ * @author: yl
  * @date: 2020/6/12 15:56
  */
 @Service
 public class PmsBrandServiceImpl implements PmsBrandService {
     @Autowired
-    private PmsBrandMapper brandMapper;
+    private PmsBrandDao brandDao;
 
     @Override
-    public List<PmsBrand> listAllBrand() {
-        return brandMapper.selectByExample(new PmsBrandExample());
+    public List<PmsBrandPO> listAllBrand() {
+        Map<String, Object> params = new HashMap<>();
+        return brandDao.selectList(params);
     }
 
     @Override
-    public void insertBrand(PmsBrand pmsBrand) {
-        brandMapper.insert(pmsBrand);
+    public void insertBrand(PmsBrandPO pmsBrandPO) {
+        brandDao.insert(pmsBrandPO);
     }
 
     @Override
-    public void deleteBrand(Long id) {
-        brandMapper.deleteByPrimaryKey(id);
+    public void deleteBrand(BigDecimal id) {
+        brandDao.deleteById(id);
     }
 
     @Override
-    public void updateBrand(PmsBrand pmsBrand) {
-        brandMapper.updateByPrimaryKeySelective(pmsBrand);
+    public void updateBrand(PmsBrandPO pmsBrandPO) {
+        brandDao.update(pmsBrandPO);
     }
 
     @Override
-    public List<PmsBrand> listBrand(int pageNum, int pageSize) {
+    public List<PmsBrandPO> listBrand(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        return brandMapper.selectByExample(new PmsBrandExample());
+        Map<String, Object> params = new HashMap<>();
+        List<PmsBrandPO> pmsBrandPOList = brandDao.selectList(params);
+        return pmsBrandPOList;
     }
 
     @Override
-    public PmsBrand queryBrand(Long id) {
-        return brandMapper.selectByPrimaryKey(id);
+    public PmsBrandPO queryBrand(BigDecimal id) {
+        return brandDao.selectById(id);
     }
 }

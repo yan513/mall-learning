@@ -12,10 +12,9 @@ import java.util.Properties;
 
 /**
  * @version: 1.00.00
- * @description:自定义注释生成器
- * @copyright: Copyright (c) 2019 立林科技 All Rights Reserved
- * @company: 厦门立林科技有限公司
- * @author: yanlin
+ * @description: 自定义注释生成器
+ * @copyright: Copyright (c) 2020  All Rights Reserved
+ * @author: yl
  * @date: 2020/6/12 15:36
  */
 public class CommentGenerator extends DefaultCommentGenerator {

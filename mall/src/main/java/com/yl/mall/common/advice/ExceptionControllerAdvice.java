@@ -2,6 +2,7 @@ package com.yl.mall.common.advice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yl.mall.common.api.CommonResult;
+import com.yl.mall.common.exception.BusinessException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -9,9 +10,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
  * @version: 1.0.0
- * @description:异常捕获处理
+ * @description: 异常捕获处理
  * @copyright: Copyright (c) 2020 All Rights Reserved
- * @author: yanlin
+ * @author: yl
  * @date: 2020/6/15 1:24 下午
  */
 @RestControllerAdvice
@@ -22,4 +23,8 @@ public class ExceptionControllerAdvice {
         return CommonResult.validateFailed(error.getDefaultMessage());
     }
 
+    @ExceptionHandler(BusinessException.class)
+    public CommonResult<String> BusinessExceptionHandle(BusinessException e) {
+        return new CommonResult<>(e.getCode(), e.getMessage(), null);
+    }
 }

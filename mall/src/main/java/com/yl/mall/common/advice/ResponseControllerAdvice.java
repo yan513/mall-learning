@@ -12,9 +12,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
  * @version: 1.0.0
- * @description:结果处理
+ * @description: 返回结果处理
  * @copyright: Copyright (c) 2020 All Rights Reserved
- * @author: yanlin
+ * @author: yl
  * @date: 2020/6/15 1:29 下午
  */
 @RestControllerAdvice(basePackages = {"com.yl.mall.controller"})

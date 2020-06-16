@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset yanlin:mall_1.0.0.0
+--changeset yl:mall_1.0.0.0
 
 USE `mall`;
 

@@ -2,7 +2,7 @@ package com.yl.mall.po;
 
 import io.swagger.annotations.ApiModelProperty;
 
-public class PmsBrand {
+public class PmsBrandPO {
     @ApiModelProperty(value = "id")
     private Long id;
 

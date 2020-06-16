@@ -1,11 +1,10 @@
 package com.yl.mall.controller;
 
 import com.yl.mall.common.api.CommonResult;
-import com.yl.mall.po.PmsBrand;
+import com.yl.mall.po.PmsBrandPO;
 import com.yl.mall.service.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import liquibase.pro.packaged.T;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +20,8 @@ import java.util.List;
 /**
  * @version: 1.00.00
  * @description:品牌管理controller
- * @copyright: Copyright (c) 2019 立林科技 All Rights Reserved
- * @company: 厦门立林科技有限公司
- * @author: yanlin
+ * @copyright: Copyright (c) 2020 All Rights Reserved
+ * @author: yl
  * @date: 2020/6/12 15:55
  */
 @Api(tags = "商品品牌管理")
@@ -37,15 +35,15 @@ public class PmsBrandController {
 
     @ApiOperation("获取所有品牌列表")
     @GetMapping("/listAll")
-    public CommonResult<List<PmsBrand>> getBrandList() {
+    public CommonResult<List<PmsBrandPO>> getBrandList() {
 
         return CommonResult.success(pmsBrandService.listAllBrand());
     }
 
     @ApiOperation("添加品牌")
     @PostMapping("/create")
-    public CommonResult createBrand(@RequestBody @Valid PmsBrand pmsBrand) {
-        pmsBrandService.insertBrand(pmsBrand);
-        return CommonResult.success(pmsBrand);
+    public CommonResult createBrand(@RequestBody @Valid PmsBrandPO pmsBrandPO) {
+        pmsBrandService.insertBrand(pmsBrandPO);
+        return CommonResult.success(pmsBrandPO);
     }
 }

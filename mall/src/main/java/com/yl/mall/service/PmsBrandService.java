@@ -1,27 +1,28 @@
 package com.yl.mall.service;
 
-import com.yl.mall.po.PmsBrand;
+import com.yl.mall.po.PmsBrandPO;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * @version: 1.00.00
  * @description:
- * @copyright: Copyright (c) 2019 立林科技 All Rights Reserved
- * @company: 厦门立林科技有限公司
- * @author: yanlin
+ * @copyright: Copyright (c) 2019  All Rights Reserved
+ * @company:
+ * @author: yl
  * @date: 2020/6/12 15:55
  */
 public interface PmsBrandService {
-    List<PmsBrand> listAllBrand();
+    List<PmsBrandPO> listAllBrand();
 
-    void insertBrand(PmsBrand pmsBrand);
+    void insertBrand(PmsBrandPO pmsBrandPO);
 
-    void deleteBrand(Long id);
+    void deleteBrand(BigDecimal id);
 
-    void updateBrand(PmsBrand pmsBrand);
+    void updateBrand(PmsBrandPO pmsBrandPO);
 
-    List<PmsBrand> listBrand(int pageNum, int pageSize);
+    List<PmsBrandPO> listBrand(int pageNum, int pageSize);
 
-    PmsBrand queryBrand(Long id);
+    PmsBrandPO queryBrand(BigDecimal id);
 }
