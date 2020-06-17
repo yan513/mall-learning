@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yl.mall.dao.PmsBrandDao">
-  <resultMap id="BaseResultMap" type="com.yl.mall.po.PmsBrandPO">
+  <resultMap id="BaseResultMap" type="com.yl.mall.entity.PmsBrand">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="first_letter" jdbcType="VARCHAR" property="firstLetter" />
     <result column="factory_status" jdbcType="BIT" property="factoryStatus" />
@@ -18,14 +18,14 @@
     logo, big_pic, brand_story
   </sql>
 
-  <select id="selectList" parameterType="map" resultType="com.yl.mall.po.PmsBrandPO">
+  <select id="selectList" parameterType="map" resultType="com.yl.mall.entity.PmsBrand">
     select * from
         pms_brand
     where
         1=1
   </select>
 
-  <select id="selectById" parameterType="map" resultType="com.yl.mall.po.PmsBrandPO">
+  <select id="selectById" parameterType="map" resultType="com.yl.mall.entity.PmsBrand">
     select * from
         pms_brand
     <if test="id != null and id != ''">
@@ -38,7 +38,7 @@
     where id = #{id,jdbcType=DECIMAL}
   </delete>
 
-  <insert id="insert" parameterType="com.yl.mall.po.PmsBrandPO">
+  <insert id="insert" parameterType="com.yl.mall.entity.PmsBrand">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -97,7 +97,7 @@
     </trim>
   </insert>
 
-  <update id="update" parameterType="com.yl.mall.po.PmsBrandPO">
+  <update id="update" parameterType="com.yl.mall.entity.PmsBrand">
     update pms_brand
     <set>
       <if test="firstLetter != null">

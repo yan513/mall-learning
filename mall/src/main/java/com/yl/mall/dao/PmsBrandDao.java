@@ -1,7 +1,6 @@
 package com.yl.mall.dao;
 
-import com.yl.mall.common.generic.GenericDao;
-import com.yl.mall.po.PmsBrandPO;
+import com.yl.mall.entity.PmsBrand;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
@@ -15,14 +14,14 @@ public interface PmsBrandDao {
      * @param model
      * @return
      */
-    int insert(PmsBrandPO model);
+    int insert(PmsBrand model);
 
     /**
      * 更新对象
      * @param model
      * @return
      */
-    int update(PmsBrandPO model);
+    int update(PmsBrand model);
 
     /**
      * 删除对象（根据主键）
@@ -36,12 +35,12 @@ public interface PmsBrandDao {
      * @param id
      * @return
      */
-    PmsBrandPO selectById(BigDecimal id);
+    PmsBrand selectById(BigDecimal id);
 
     /**
      * 查询列表
      * @param map
      * @return
      */
-    List<PmsBrandPO> selectList(Map<String, Object> map);
+    List<PmsBrand> selectList(Map<String, Object> map);
 }

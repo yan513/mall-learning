@@ -1,6 +1,6 @@
 package com.yl.mall.service;
 
-import com.yl.mall.po.PmsBrandPO;
+import com.yl.mall.entity.PmsBrand;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,15 +14,15 @@ import java.util.List;
  * @date: 2020/6/12 15:55
  */
 public interface PmsBrandService {
-    List<PmsBrandPO> listAllBrand();
+    List<PmsBrand> listAllBrand();
 
-    void insertBrand(PmsBrandPO pmsBrandPO);
+    void insertBrand(PmsBrand pmsBrand);
 
     void deleteBrand(BigDecimal id);
 
-    void updateBrand(PmsBrandPO pmsBrandPO);
+    void updateBrand(PmsBrand pmsBrand);
 
-    List<PmsBrandPO> listBrand(int pageNum, int pageSize);
+    List<PmsBrand> listBrand(int pageNum, int pageSize);
 
-    PmsBrandPO queryBrand(BigDecimal id);
+    PmsBrand queryBrand(BigDecimal id);
 }

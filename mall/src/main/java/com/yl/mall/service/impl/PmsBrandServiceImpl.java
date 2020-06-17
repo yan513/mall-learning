@@ -2,7 +2,7 @@ package com.yl.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.yl.mall.dao.PmsBrandDao;
-import com.yl.mall.po.PmsBrandPO;
+import com.yl.mall.entity.PmsBrand;
 import com.yl.mall.service.PmsBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,14 +26,14 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     private PmsBrandDao brandDao;
 
     @Override
-    public List<PmsBrandPO> listAllBrand() {
+    public List<PmsBrand> listAllBrand() {
         Map<String, Object> params = new HashMap<>();
         return brandDao.selectList(params);
     }
 
     @Override
-    public void insertBrand(PmsBrandPO pmsBrandPO) {
-        brandDao.insert(pmsBrandPO);
+    public void insertBrand(PmsBrand pmsBrand) {
+        brandDao.insert(pmsBrand);
     }
 
     @Override
@@ -42,20 +42,20 @@ public class PmsBrandServiceImpl implements PmsBrandService {
     }
 
     @Override
-    public void updateBrand(PmsBrandPO pmsBrandPO) {
-        brandDao.update(pmsBrandPO);
+    public void updateBrand(PmsBrand pmsBrand) {
+        brandDao.update(pmsBrand);
     }
 
     @Override
-    public List<PmsBrandPO> listBrand(int pageNum, int pageSize) {
+    public List<PmsBrand> listBrand(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         Map<String, Object> params = new HashMap<>();
-        List<PmsBrandPO> pmsBrandPOList = brandDao.selectList(params);
-        return pmsBrandPOList;
+        List<PmsBrand> pmsBrandList = brandDao.selectList(params);
+        return pmsBrandList;
     }
 
     @Override
-    public PmsBrandPO queryBrand(BigDecimal id) {
+    public PmsBrand queryBrand(BigDecimal id) {
         return brandDao.selectById(id);
     }
 }

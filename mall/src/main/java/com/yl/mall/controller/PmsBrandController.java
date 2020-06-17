@@ -1,7 +1,7 @@
 package com.yl.mall.controller;
 
 import com.yl.mall.common.api.CommonResult;
-import com.yl.mall.po.PmsBrandPO;
+import com.yl.mall.entity.PmsBrand;
 import com.yl.mall.service.PmsBrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -35,15 +35,15 @@ public class PmsBrandController {
 
     @ApiOperation("获取所有品牌列表")
     @GetMapping("/listAll")
-    public CommonResult<List<PmsBrandPO>> getBrandList() {
+    public CommonResult<List<PmsBrand>> getBrandList() {
 
         return CommonResult.success(pmsBrandService.listAllBrand());
     }
 
     @ApiOperation("添加品牌")
     @PostMapping("/create")
-    public CommonResult createBrand(@RequestBody @Valid PmsBrandPO pmsBrandPO) {
-        pmsBrandService.insertBrand(pmsBrandPO);
-        return CommonResult.success(pmsBrandPO);
+    public CommonResult createBrand(@RequestBody @Valid PmsBrand pmsBrand) {
+        pmsBrandService.insertBrand(pmsBrand);
+        return CommonResult.success(pmsBrand);
     }
 }
