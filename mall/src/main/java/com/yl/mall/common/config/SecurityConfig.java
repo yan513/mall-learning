@@ -1,4 +1,4 @@
-package com.yl.mall.config;
+package com.yl.mall.common.config;
 
 import com.yl.mall.common.component.JwtAuthenticationTokenFilter;
 import com.yl.mall.common.component.RestAuthenticationEntryPoint;

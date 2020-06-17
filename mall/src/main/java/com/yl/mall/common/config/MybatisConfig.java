@@ -1,4 +1,4 @@
-package com.yl.mall.config;
+package com.yl.mall.common.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
