@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 后台用户权限表(UmsPermission)表服务实现类
@@ -76,5 +78,12 @@ public class UmsPermissionServiceImpl implements UmsPermissionService {
     @Override
     public boolean deleteById(BigDecimal id) {
         return this.umsPermissionDao.deleteById(id) > 0;
+    }
+
+    @Override
+    public List<UmsPermission> getPermissionList(BigDecimal id) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("adminId", id);
+        return umsPermissionDao.selectByCondition(map);
     }
 }

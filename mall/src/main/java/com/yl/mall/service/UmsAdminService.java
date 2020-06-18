@@ -1,10 +1,12 @@
 package com.yl.mall.service;
 
+import com.yl.mall.dto.UmsAdminLoginParam;
 import com.yl.mall.entity.UmsAdmin;
 import com.yl.mall.entity.UmsPermission;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 后台用户表(UmsAdmin)表服务接口
@@ -64,10 +66,14 @@ public interface UmsAdminService {
     UmsAdmin getAdminByUsername(String username);
 
     /**
-     * 通过用户id查找权限列表
-     *
-     * @param id 用户id
-     * @return 是否成功
+     * 注册功能
      */
-    List<UmsPermission> getPermissionList(BigDecimal id);
+    UmsAdmin register(UmsAdmin umsAdminParam);
+
+    /**
+     * 登录功能
+     * @param loginParam 登录信息
+     * @return 生成的JWT的token
+     */
+    Map<String, String> login(UmsAdminLoginParam loginParam);
 }

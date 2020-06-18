@@ -54,4 +54,11 @@ public interface UmsPermissionService {
      */
     boolean deleteById(BigDecimal id);
 
+    /**
+     * 通过用户id查找权限列表
+     *
+     * @param id 用户id
+     * @return 是否成功
+     */
+    List<UmsPermission> getPermissionList(BigDecimal id);
 }

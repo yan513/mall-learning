@@ -24,10 +24,10 @@
         left join ums_admin_role_relation uarr ON uarr.role_id = ur.id
         <where>
             <if test="adminId != null and adminId != ''">
-                and uarr.admin_id = #{adminId, jdbcType=BECIMAL}
+                and uarr.admin_id = #{adminId, jdbcType=DECIMAL}
             </if>
             <if test="roleId != null and roleId != ''">
-                and urpr.role_id = #{roleId, jdbcType=BECIMAL}
+                and urpr.role_id = #{roleId, jdbcType=DECIMAL}
             </if>
         </where>
     </select>

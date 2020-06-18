@@ -14,19 +14,19 @@
         <result property="loginTime" column="login_time" jdbcType="TIMESTAMP"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
     </resultMap>
+
     <!-- 条件查询 -->
     <select id="selectByCondition" parameterType="map" resultType="com.yl.mall.entity.UmsAdmin">
-        selet * from
+        select * from
             mall.ums_admin
         <where>
-            <if test="id != null and id != ''">
-                AND id = #{id, jdbcType=BECIMAL}
-            </if>
+            1=1
             <if test="username != null and username != ''">
                 AND username = #{username, jdbcType=VARCHAR}
             </if>
         </where>
     </select>
+
     <!--查询单个-->
     <select id="queryById" resultMap="UmsAdminMap">
         select
